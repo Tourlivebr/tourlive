@@ -1,0 +1,163 @@
+---
+import { siteData } from '../data/site.ts';
+---
+
+<section id="solucoes" class="py-16 lg:py-24 bg-neutral-light">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <!-- Content -->
+      <div class="order-2 lg:order-1">
+        <div class="mb-6">
+          <span class="inline-block px-4 py-2 bg-primary-blue/10 text-primary-blue font-semibold rounded-full text-sm mb-4">
+            Sobre Nós
+          </span>
+         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-dark mb-6 leading-tight">
+  Especialistas em 
+  <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-blue to-primary-green">
+    Turismo Interativo
+  </span>
+</h2>
+</div>
+
+<div class="space-y-6 text-gray-600 text-lg leading-relaxed">
+  <p>
+    Transformamos destinos turísticos em experiências digitais imersivas através de 
+    <strong class="text-neutral-dark">mapas interativos</strong>, 
+    <strong class="text-neutral-dark">sites comerciais</strong>, 
+    <strong class="text-neutral-dark">portais de turismo</strong>, 
+    <strong class="text-neutral-dark">geolocalização</strong> e 
+    <strong class="text-neutral-dark">guia falante personalizado</strong>.
+  </p>
+  
+  <p>
+    Nossa tecnologia combina storytelling local, rotas inteligentes e analytics avançado 
+    para criar jornadas únicas que conectam visitantes com a essência de cada destino, 
+    gerando <strong class="text-neutral-dark">maior engajamento e receita</strong> para nossos parceiros.
+  </p>
+  
+  <p>
+    Especializamos em SEO local, integração com Google Maps e estratégias de monetização 
+    que transformam cada visita em uma oportunidade de negócio sustentável.
+  </p>
+</div>
+        <!-- Action Buttons -->
+        <div class="mt-10 flex flex-col sm:flex-row gap-4">
+          <a 
+            href="#contato"
+            class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary-blue to-primary-green hover:from-blue-600 hover:to-green-600 text-white font-bold rounded-2xl transition-all duration-200 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 text-center"
+          >
+            Solicitar Proposta
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </a>
+          
+          <a 
+            href="#clientes"
+            class="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-primary-blue text-primary-blue hover:bg-primary-blue hover:text-white font-semibold rounded-2xl transition-all duration-200 text-center"
+          >
+            <svg class="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+            </svg>
+            Ver Casos Reais
+          </a>
+        </div>
+      </div>
+
+      <!-- Image/Visual -->
+      <div class="order-1 lg:order-2">
+        <div class="relative">
+          <!-- Main Image Container -->
+          <div class="relative bg-gradient-to-br from-primary-blue to-primary-green rounded-3xl p-8 shadow-2xl">
+            <!-- Interactive Map Mockup -->
+            <div class="bg-white rounded-2xl p-6 shadow-lg">
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center space-x-2">
+                  <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                  <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                  <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                </div>
+                <span class="text-xs text-gray-500 font-mono">Mapa Interativo</span>
+              </div>
+              
+              <!-- Map Content -->
+              <div class="space-y-4">
+                <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-xl">
+                  <div class="w-8 h-8 bg-primary-blue rounded-full flex items-center justify-center">
+                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-sm text-neutral-dark">Centro Histórico</p>
+                    <p class="text-xs text-gray-500">🎧 Áudio-guia disponível</p>
+                  </div>
+                </div>
+                
+                <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-xl">
+                  <div class="w-8 h-8 bg-primary-green rounded-full flex items-center justify-center">
+                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-sm text-neutral-dark">Museu Local</p>
+                    <p class="text-xs text-gray-500">📱 QR Code interativo</p>
+                  </div>
+                </div>
+                
+                <div class="flex items-center space-x-3 p-3 bg-accent-amber/10 rounded-xl border border-accent-amber/20">
+                  <div class="w-8 h-8 bg-accent-amber rounded-full flex items-center justify-center">
+                    <svg class="w-4 h-4 text-neutral-dark" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-sm text-neutral-dark">Você está aqui</p>
+                    <p class="text-xs text-gray-500">🧭 Navegação ativa</p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Audio Player Mockup -->
+              <div class="mt-4 p-3 bg-gradient-to-r from-primary-blue/10 to-primary-green/10 rounded-xl border border-primary-blue/20">
+                <div class="flex items-center space-x-3">
+                  <button class="w-8 h-8 bg-primary-blue rounded-full flex items-center justify-center">
+                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
+                    </svg>
+                  </button>
+                  <div class="flex-1">
+                    <p class="text-xs font-semibold text-neutral-dark">História do Centro Histórico</p>
+                    <div class="flex items-center space-x-2 mt-1">
+                      <div class="flex-1 h-1 bg-gray-200 rounded-full">
+                        <div class="w-1/3 h-1 bg-primary-blue rounded-full"></div>
+                      </div>
+                      <span class="text-xs text-gray-500">1:23</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Floating Stats -->
+          <div class="absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-xl border border-gray-100">
+            <div class="text-center">
+              <p class="text-2xl font-bold text-primary-green">{siteData.stats.guidedInteractions}</p>
+              <p class="text-xs text-gray-500">Interações</p>
+            </div>
+          </div>
+          
+          <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl p-4 shadow-xl border border-gray-100">
+            <div class="text-center">
+              <p class="text-2xl font-bold text-accent-amber">{siteData.stats.satisfactionRate}</p>
+              <p class="text-xs text-gray-500">Satisfação</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

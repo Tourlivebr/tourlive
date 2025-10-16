@@ -1,0 +1,747 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+import { siteData } from '../data/site.ts';
+---
+
+<Layout title="Sites Comerciais Inteligentes - TourLive Brasil">
+  <!-- Header Fixo -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <a href="/" class="flex items-center">
+            <img 
+              src="/images/logo_tourlive1.png" 
+              alt="TourLive Brasil" 
+              class="h-10 w-auto"
+            />
+          </a>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center space-x-8">
+          <a href="/" class="text-neutral-dark hover:text-primary-blue font-medium transition-colors duration-200">Início</a>
+          <a href="/#solucoes" class="text-neutral-dark hover:text-primary-blue font-medium transition-colors duration-200">Soluções</a>
+          <div class="relative group">
+            <button class="text-neutral-dark hover:text-primary-blue font-medium transition-colors duration-200 flex items-center">
+              Produtos
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <div class="py-2">
+                <a href="/sites-comerciais" class="block px-4 py-2 text-sm text-neutral-dark hover:text-primary-blue hover:bg-gray-50 transition-colors duration-200">
+                  Sites Comerciais
+                </a>
+              </div>
+            </div>
+          </div>
+          <a href="/#clientes" class="text-neutral-dark hover:text-primary-blue font-medium transition-colors duration-200">Clientes</a>
+          <a href="/#depoimentos" class="text-neutral-dark hover:text-primary-blue font-medium transition-colors duration-200">Depoimentos</a>
+          <a href="/#contato" class="text-neutral-dark hover:text-primary-blue font-medium transition-colors duration-200">Contato</a>
+        </nav>
+        
+        <!-- Desktop CTA -->
+        <div class="hidden md:block">
+          <a 
+            href="#demonstracao"
+            class="inline-flex items-center px-6 py-2 bg-gradient-to-r from-primary-green to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold rounded-full transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+          >
+            Solicitar Demonstração
+            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </a>
+        </div>
+        
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button 
+            id="mobile-menu-button"
+            type="button" 
+            class="inline-flex items-center justify-center p-2 rounded-xl text-gray-700 hover:text-primary-blue hover:bg-gray-100 transition-colors duration-200"
+            aria-controls="mobile-menu" 
+            aria-expanded="false"
+          >
+            <span class="sr-only">Abrir menu principal</span>
+            <!-- Hamburger icon -->
+            <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+            <!-- Close icon (hidden by default) -->
+            <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Mobile menu -->
+    <div class="md:hidden" id="mobile-menu">
+      <div class="hidden px-2 pt-2 pb-3 space-y-1 bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-lg">
+        <a href="/" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-blue hover:bg-gray-50 rounded-xl transition-colors duration-200 mobile-menu-link">Início</a>
+        <a href="/#solucoes" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-blue hover:bg-gray-50 rounded-xl transition-colors duration-200 mobile-menu-link">Soluções</a>
+        <div>
+          <button class="w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-blue hover:bg-gray-50 rounded-xl transition-colors duration-200 flex items-center justify-between mobile-submenu-toggle" data-submenu="produtos">
+            Produtos
+            <svg class="w-4 h-4 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="hidden pl-6 space-y-1" id="submenu-produtos">
+            <a href="/sites-comerciais" class="block px-3 py-2 text-sm text-gray-600 hover:text-primary-blue hover:bg-gray-50 rounded-xl transition-colors duration-200 mobile-menu-link">
+              Sites Comerciais
+            </a>
+          </div>
+        </div>
+        <a href="/#clientes" class="block px-3 py-2 text-base font-medium text-neutral-dark hover:text-primary-blue hover:bg-gray-50 rounded-xl transition-colors duration-200 mobile-menu-link">Clientes</a>
+        <a href="/#depoimentos" class="block px-3 py-2 text-base font-medium text-neutral-dark hover:text-primary-blue hover:bg-gray-50 rounded-xl transition-colors duration-200 mobile-menu-link">Depoimentos</a>
+        <a href="/#contato" class="block px-3 py-2 text-base font-medium text-neutral-dark hover:text-primary-blue hover:bg-gray-50 rounded-xl transition-colors duration-200 mobile-menu-link">Contato</a>
+        <div class="pt-4 pb-2">
+          <a 
+            href="#demonstracao"
+            class="block w-full text-center px-4 py-3 bg-primary-darkblue hover:opacity-90 text-white font-semibold rounded-2xl transition-all duration-200 shadow-lg mobile-menu-link"
+          >
+            Solicitar Demonstração
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Banner Hero Full Width -->
+  <section id="hero" class="relative bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 py-16 md:py-24 overflow-hidden mt-16">
+    <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+      <div 
+        class="w-full h-full bg-fixed bg-cover bg-center bg-no-repeat opacity-90"
+        style="background-image: url('/images/sites-comerciais/capa.jpg')"
+      ></div>
+      <div class="absolute inset-0 bg-black/50"></div>
+    </div>
+    
+    <!-- Decorative Elements -->
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+      <div class="absolute top-0 left-0 w-full h-full bg-[url('/images/noise.png')] opacity-10"></div>
+      <div class="absolute top-0 left-0 w-full h-full bg-gradient-radial from-primary-blue/20 to-transparent opacity-40"></div>
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-blue/10 rounded-full blur-3xl"></div>
+      <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-green/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent-amber/10 rounded-full blur-3xl"></div>
+    </div>
+    
+    <!-- Hero Content -->
+    <div class="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+     
+      <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 leading-tight drop-shadow-2xl">
+        <span class="block drop-shadow-lg">Venda mais na temporada</span>
+        <span class="block text-accent-amber drop-shadow-lg">com seu Site Comercial</span>
+        <span class="block text-primary-green drop-shadow-lg">Inteligente</span>
+      </h1>
+      
+      <p class="text-xl sm:text-2xl mb-8 text-white max-w-3xl mx-auto leading-relaxed drop-shadow-lg font-medium">
+        Transforme visitantes em clientes com um site profissional que vende 24h por dia
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a 
+          href="https://guiadeturismo.vercel.app/"
+          target="_blank"
+          class="inline-flex items-center justify-center px-8 py-4 bg-primary-blue hover:opacity-90 text-white font-bold rounded-2xl transition-all duration-200 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 text-lg"
+        >
+          Site para Guias e App
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
+        
+        <a 
+          href="/influencers"
+          class="inline-flex items-center justify-center px-8 py-4 bg-primary-darkblue/90 hover:bg-primary-darkblue/80 text-white font-bold rounded-xl transition-all duration-200 shadow-md hover:shadow-lg text-lg"
+        >
+          Site para Influencer
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
+        
+        <a 
+          href="https://minhacasa.vercel.app"
+          target="_blank"
+          class="inline-flex items-center justify-center px-8 py-4 bg-primary-green hover:opacity-90 text-neutral-dark font-bold rounded-2xl transition-all duration-200 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 text-lg"
+        >
+          Site para Casa por Temporada
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Seção 1 - Impacto -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-dark mb-6">
+          Você está preparado para a <span class="text-gray-600">temporada?</span>
+        </h2>
+        
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xl sm:text-2xl text-gray-700 mb-8 leading-relaxed">
+            <strong class="text-gray-700">Sem site profissional, você perde clientes</strong> para quem já aparece no Google.
+          </p>
+          
+          <p class="text-xl sm:text-2xl text-gray-700 leading-relaxed">
+            Com o <strong class="text-gray-600">Site Comercial Inteligente da TourLive</strong>, você se apresenta como um profissional <strong>organizado, confiável e pronto para vender mais.</strong>
+          </p>
+        </div>
+      </div>
+      
+      <!-- Stats Row -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-16">
+        <div class="text-center p-6 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl">
+          <div class="text-4xl font-bold text-gray-700 mb-2">+300%</div>
+          <div class="text-gray-600 font-medium">Aumento em Vendas Online</div>
+        </div>
+        <div class="text-center p-6 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl">
+          <div class="text-4xl font-bold text-gray-700 mb-2">24/7</div>
+          <div class="text-gray-600 font-medium">Vendas Automáticas</div>
+        </div>
+        <div class="text-center p-6 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl">
+          <div class="text-4xl font-bold text-gray-700 mb-2">1º</div>
+          <div class="text-gray-600 font-medium">Posição no Google</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção 2 - Benefícios -->
+  <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl sm:text-5xl font-bold text-neutral-dark mb-6">
+          Por que escolher o <span class="text-primary-green">Site Comercial Inteligente?</span>
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Tudo que você precisa para dominar o mercado digital do turismo
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Benefício 1 -->
+        <div class="group relative bg-white p-8 rounded-xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl border-l-4 border-primary-blue">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-primary-blue/5 rounded-bl-full -mr-12 -mt-12 z-0"></div>
+          <div class="relative z-10">
+            <div class="w-16 h-16 bg-primary-blue text-white rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <span class="text-3xl">🌐</span>
+            </div>
+            <h3 class="text-xl font-bold text-neutral-dark mb-4">Domínio próprio + SEO avançado</h3>
+            <p class="text-neutral-dark/70 leading-relaxed">Aumenta visibilidade e coloca você no topo das buscas. Apareça antes dos concorrentes!</p>
+            <div class="w-12 h-1 bg-primary-blue mt-6 group-hover:w-20 transition-all duration-300"></div>
+          </div>
+        </div>
+        
+        <!-- Benefício 2 -->
+        <div class="group relative bg-white p-8 rounded-xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl border-l-4 border-primary-green">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-primary-green/5 rounded-bl-full -mr-12 -mt-12 z-0"></div>
+          <div class="relative z-10">
+            <div class="w-16 h-16 bg-primary-green text-white rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <span class="text-3xl">📲</span>
+            </div>
+            <h3 class="text-xl font-bold text-neutral-dark mb-4">Campanhas online</h3>
+            <p class="text-neutral-dark/70 leading-relaxed">Anúncios no Google prontos para atrair clientes. Marketing digital que funciona!</p>
+            <div class="w-12 h-1 bg-primary-green mt-6 group-hover:w-20 transition-all duration-300"></div>
+          </div>
+        </div>
+        
+        <!-- Benefício 3 -->
+        <div class="group relative bg-white p-8 rounded-xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl border-l-4 border-primary-darkblue">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-primary-darkblue/5 rounded-bl-full -mr-12 -mt-12 z-0"></div>
+          <div class="relative z-10">
+            <div class="w-16 h-16 bg-primary-darkblue text-white rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <span class="text-3xl">🤝</span>
+            </div>
+            <h3 class="text-xl font-bold text-neutral-dark mb-4">Validação social</h3>
+            <p class="text-neutral-dark/70 leading-relaxed">Depoimentos e presença digital para reforçar credibilidade. Clientes confiam mais!</p>
+            <div class="w-12 h-1 bg-primary-darkblue mt-6 group-hover:w-20 transition-all duration-300"></div>
+          </div>
+        </div>
+        
+        <!-- Benefício 4 -->
+        <div class="group relative bg-white p-8 rounded-xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl border-l-4 border-primary-blue">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-primary-blue/5 rounded-bl-full -mr-12 -mt-12 z-0"></div>
+          <div class="relative z-10">
+            <div class="w-16 h-16 bg-primary-blue text-white rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <span class="text-3xl">🛒</span>
+            </div>
+            <h3 class="text-xl font-bold text-neutral-dark mb-4">Vitrine de passeios e transfers</h3>
+            <p class="text-neutral-dark/70 leading-relaxed">Seus serviços em destaque, prontos para reserva. Venda enquanto dorme!</p>
+            <div class="w-12 h-1 bg-primary-blue mt-6 group-hover:w-20 transition-all duration-300"></div>
+          </div>
+        </div>
+        
+        <!-- Benefício 5 -->
+        <div class="group relative bg-white p-8 rounded-xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl border-l-4 border-primary-green">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-primary-green/5 rounded-bl-full -mr-12 -mt-12 z-0"></div>
+          <div class="relative z-10">
+            <div class="w-16 h-16 bg-primary-green text-white rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <span class="text-3xl">🔗</span>
+            </div>
+            <h3 class="text-xl font-bold text-neutral-dark mb-4">Links de afiliados oficiais</h3>
+            <p class="text-neutral-dark/70 leading-relaxed">Venda de ingressos e comissões automáticas por região. Renda passiva garantida!</p>
+            <div class="w-12 h-1 bg-primary-green mt-6 group-hover:w-20 transition-all duration-300"></div>
+          </div>
+        </div>
+        
+        <!-- Benefício 6 -->
+        <div class="group relative bg-white p-8 rounded-xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl border-l-4 border-primary-blue">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-primary-blue/5 rounded-bl-full -mr-12 -mt-12 z-0"></div>
+          <div class="relative z-10">
+            <div class="w-16 h-16 bg-primary-blue text-white rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <span class="text-3xl">📤</span>
+            </div>
+            <h3 class="text-xl font-bold text-neutral-dark mb-4">Compartilhamento fácil</h3>
+            <p class="text-neutral-dark/70 leading-relaxed">Envie cada passeio direto pelo WhatsApp. Vendas mais rápidas e práticas!</p>
+            <div class="w-12 h-1 bg-primary-blue mt-6 group-hover:w-20 transition-all duration-300"></div>
+          </div>
+        </div>
+        
+        <!-- Benefício 7 -->
+        <div class="group relative bg-white p-8 rounded-xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl border-l-4 border-primary-darkblue md:col-span-2 lg:col-span-1">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-primary-darkblue/5 rounded-bl-full -mr-12 -mt-12 z-0"></div>
+          <div class="relative z-10">
+            <div class="w-16 h-16 bg-primary-darkblue text-white rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <span class="text-3xl">🖼️</span>
+            </div>
+            <h3 class="text-xl font-bold text-neutral-dark mb-4">QR Code e artes personalizadas</h3>
+            <p class="text-neutral-dark/70 leading-relaxed">Para cartões de visita, totens e displays. Marketing físico e digital integrados!</p>
+            <div class="w-12 h-1 bg-primary-darkblue mt-6 group-hover:w-20 transition-all duration-300"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção 3 - Escassez e Urgência -->
+  <section class="py-20 bg-gradient-to-r from-red-600 to-red-700 text-white relative overflow-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25% 25%, white 2px, transparent 2px); background-size: 50px 50px;"></div>
+    </div>
+    
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center">
+        <div class="mb-6">
+          <span class="inline-flex items-center px-6 py-3 bg-yellow-400 text-red-700 font-bold rounded-full text-lg animate-pulse">
+            ⚡ ATENÇÃO: Quantidade Limitada!
+          </span>
+        </div>
+        
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8">
+          A temporada já começou...
+          <br>
+          <span class="text-yellow-300">não fique de fora!</span>
+        </h2>
+        
+        <div class="max-w-4xl mx-auto mb-12">
+          <p class="text-xl sm:text-2xl mb-6 leading-relaxed">
+            Estamos desenvolvendo <strong class="text-yellow-300">apenas 5 sites</strong> para novos clientes antes da alta temporada.
+          </p>
+          
+          <p class="text-xl sm:text-2xl leading-relaxed">
+            <strong class="text-yellow-300">Quem se adiantar, vende mais.</strong>
+            <br>
+            <strong class="text-red-200">Quem atrasar, deixa de ganhar.</strong>
+          </p>
+        </div>
+        
+        <!-- Countdown Timer -->
+        <div class="grid grid-cols-4 gap-4 max-w-md mx-auto mb-12" id="countdown">
+          <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-4 text-center">
+            <div class="text-3xl font-bold text-yellow-300" id="days">15</div>
+            <div class="text-sm text-gray-200">Dias</div>
+          </div>
+          <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-4 text-center">
+            <div class="text-3xl font-bold text-yellow-300" id="hours">08</div>
+            <div class="text-sm text-gray-200">Horas</div>
+          </div>
+          <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-4 text-center">
+            <div class="text-3xl font-bold text-yellow-300" id="minutes">42</div>
+            <div class="text-sm text-gray-200">Min</div>
+          </div>
+          <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-4 text-center">
+            <div class="text-3xl font-bold text-yellow-300" id="seconds">17</div>
+            <div class="text-sm text-gray-200">Seg</div>
+          </div>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="#demonstracao"
+            class="inline-flex items-center justify-center px-10 py-5 bg-yellow-400 hover:bg-yellow-300 text-red-700 font-bold rounded-2xl transition-all duration-200 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 text-xl animate-pulse"
+          >
+            GARANTIR MEU SITE AGORA!
+            <svg class="ml-2 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção 4 - CTA Final -->
+  <section id="demonstracao" class="py-16 md:py-20 bg-gradient-to-br from-blue-50 via-blue-100 to-green-100 text-primary-darkblue relative overflow-hidden">
+    <!-- Background Decoration -->
+    <div class="absolute inset-0">
+      <div class="absolute top-0 right-0 w-full h-full  bg-cover bg-center opacity-5"></div>
+      <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-200/30 via-transparent to-green-200/30"></div>
+      <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-100/50 rounded-full blur-3xl"></div>
+      <div class="absolute -top-24 -right-24 w-96 h-96 bg-green-100/50 rounded-full blur-3xl"></div>
+    </div>
+    
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <!-- Card Container -->
+      <div class="bg-white/80 backdrop-blur-md rounded-3xl p-6 sm:p-8 md:p-12 border border-blue-100 shadow-xl">
+        <div class="text-center">
+            <!-- Badge Promocional -->
+          <div class="mb-6 md:mb-8">
+            <span class="inline-flex items-center justify-center px-4 py-2 bg-primary-blue/10 text-primary-blue font-bold rounded-full text-sm md:text-base">
+              <span class="mr-1">🔥</span> PROMOÇÃO ESPECIAL DE TEMPORADA
+            </span>
+          </div>
+          <!-- Título Principal -->
+          <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 drop-shadow-sm">
+            Garanta já o seu
+            <span class="bg-gradient-to-r from-primary-blue to-primary-green bg-clip-text text-transparent block mt-2">Site Comercial Inteligente!</span>
+          </h2>
+          
+        
+
+          <!-- Preços -->
+          <div class="mb-8 md:mb-10 flex flex-col md:flex-row items-center justify-center gap-4">
+            <div class="text-2xl md:text-3xl font-bold text-gray-400 line-through">
+              De: R$ 1.199,00
+            </div>
+            <div class="hidden md:block text-3xl font-bold text-primary-blue">→</div>
+            <div class="text-3xl md:text-5xl font-bold text-primary-blue">
+              Por apenas: <span class="text-primary-green">R$ 599,00</span>
+            </div>
+          </div>
+          
+          <!-- Badge Economia -->
+          <div class="mb-8 md:mb-10">
+            <span class="inline-flex items-center justify-center px-4 py-2 bg-primary-green/10 text-primary-green font-bold rounded-full text-base md:text-xl">
+              <span class="mr-1">💰</span> Economia de R$ 600,00!
+            </span>
+          </div>
+          
+          <!-- Benefícios -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto mb-8 md:mb-10">
+            <!-- Benefício 1 -->
+            <div class="bg-white rounded-xl p-4 border border-blue-100 shadow-md transform transition-transform hover:scale-105 duration-300">
+              <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 md:w-12 md:h-12 bg-primary-blue/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span class="text-xl md:text-2xl">🌐</span>
+                </div>
+                <div class="text-left">
+                  <div class="font-semibold text-primary-darkblue text-base md:text-lg">Domínio Personalizado</div>
+                  <div class="text-xs md:text-sm text-gray-600">seunome.com.br (12 meses)</div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Benefício 2 -->
+            <div class="bg-white rounded-xl p-4 border border-blue-100 shadow-md transform transition-transform hover:scale-105 duration-300">
+              <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 md:w-12 md:h-12 bg-primary-blue/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span class="text-xl md:text-2xl">☁️</span>
+                </div>
+                <div class="text-left">
+                  <div class="font-semibold text-primary-darkblue text-base md:text-lg">Hospedagem Premium</div>
+                  <div class="text-xs md:text-sm text-gray-600">12 meses inclusos</div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Benefício 3 -->
+            <div class="bg-white rounded-xl p-4 border border-blue-100 shadow-md transform transition-transform hover:scale-105 duration-300">
+              <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 md:w-12 md:h-12 bg-primary-blue/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span class="text-xl md:text-2xl">🔄</span>
+                </div>
+                <div class="text-left">
+                  <div class="font-semibold text-primary-darkblue text-base md:text-lg">Atualizações</div>
+                  <div class="text-xs md:text-sm text-gray-600">Até 3 atualizações semestrais</div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Benefício 4 -->
+            <div class="bg-white rounded-xl p-4 border border-blue-100 shadow-md transform transition-transform hover:scale-105 duration-300">
+              <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 md:w-12 md:h-12 bg-primary-blue/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span class="text-xl md:text-2xl">🛠️</span>
+                </div>
+                <div class="text-left">
+                  <div class="font-semibold text-primary-darkblue text-base md:text-lg">Suporte Gratuito</div>
+                  <div class="text-xs md:text-sm text-gray-600">Atendimento especializado</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Main CTA Button -->
+          <div class="mb-8 md:mb-12 relative">
+            <!-- Pulse effect -->
+            <div class="absolute inset-0 rounded-3xl bg-primary-green animate-ping opacity-25"></div>
+            
+            <a 
+              href={`https://wa.me/${siteData.company.whatsapp}?text=Olá! Quero solicitar meu Site Comercial Inteligente da TourLive.`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center px-6 py-4 md:px-12 md:py-6 bg-primary-green hover:bg-green-500 text-white font-bold rounded-3xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-2 text-lg md:text-2xl group relative z-10"
+            >
+              <svg class="mr-2 md:mr-3 w-6 h-6 md:w-8 md:h-8 group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+              </svg>
+              <span>QUERO MEU SITE AGORA!</span>
+              <svg class="ml-2 md:ml-3 w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+          </div>
+          
+          <!-- Trust Indicators -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-4xl mx-auto">
+            <!-- Indicador 1 -->
+            <div class="bg-white/10 rounded-xl p-3 md:p-4 backdrop-blur-sm border border-white/10 shadow-lg transform transition-transform hover:scale-105 duration-300">
+              <div class="flex items-center justify-start md:justify-center space-x-3">
+                <div class="w-10 h-10 md:w-12 md:h-12 bg-accent-amber/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 md:w-6 md:h-6 text-accent-amber" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div class="text-left">
+                  <div class="font-semibold text-black text-base md:text-lg">100% Seguro</div>
+                  <div class="text-xs md:text-sm text-black/80">Demonstração sem compromisso</div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Indicador 2 -->
+            <div class="bg-white/10 rounded-xl p-3 md:p-4 backdrop-blur-sm border border-white/10 shadow-lg transform transition-transform hover:scale-105 duration-300">
+              <div class="flex items-center justify-start md:justify-center space-x-3">
+                <div class="w-10 h-10 md:w-12 md:h-12 bg-accent-amber/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 md:w-6 md:h-6 text-accent-amber" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div class="text-left">
+                  <div class="font-semibold text-black text-base md:text-lg">Resposta Rápida</div>
+                  <div class="text-xs md:text-sm text-black/80">Atendimento em até 2 horas</div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Indicador 3 -->
+            <div class="bg-white/10 rounded-xl p-3 md:p-4 backdrop-blur-sm border border-white/10 shadow-lg transform transition-transform hover:scale-105 duration-300">
+              <div class="flex items-center justify-start md:justify-center space-x-3">
+                <div class="w-10 h-10 md:w-12 md:h-12 bg-accent-amber/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 md:w-6 md:h-6 text-accent-amber" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                </div>
+                <div class="text-left">
+                  <div class="font-semibold text-black text-base md:text-lg">Resultados Garantidos</div>
+                  <div class="text-xs md:text-sm text-black/80">Ou seu dinheiro de volta</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Simples -->
+  <Footer />
+  
+  <!-- Botão Flutuante WhatsApp -->
+  <WhatsAppFloat />
+</Layout>
+
+<style>
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fadeInUp {
+    animation: fadeInUp 0.6s ease-out;
+  }
+  
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, #1e40af, #059669);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Custom shadow */
+  .shadow-3xl {
+    box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
+  }
+</style>
+
+<script>
+  // Mobile menu toggle functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuContent = mobileMenu?.querySelector('div');
+    const hamburgerIcon = mobileMenuButton?.querySelector('svg:first-of-type');
+    const closeIcon = mobileMenuButton?.querySelector('svg:last-of-type');
+    const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+    let isMenuOpen = false;
+
+    function toggleMenu() {
+      isMenuOpen = !isMenuOpen;
+      
+      if (isMenuOpen) {
+        mobileMenuContent?.classList.remove('hidden');
+        hamburgerIcon?.classList.add('hidden');
+        closeIcon?.classList.remove('hidden');
+        mobileMenuButton?.setAttribute('aria-expanded', 'true');
+      } else {
+        mobileMenuContent?.classList.add('hidden');
+        hamburgerIcon?.classList.remove('hidden');
+        closeIcon?.classList.add('hidden');
+        mobileMenuButton?.setAttribute('aria-expanded', 'false');
+      }
+    }
+
+    mobileMenuButton?.addEventListener('click', toggleMenu);
+
+    // Mobile submenu toggle functionality
+    const submenuToggles = document.querySelectorAll('.mobile-submenu-toggle');
+    submenuToggles.forEach(toggle => {
+      toggle.addEventListener('click', function() {
+        const submenuName = this.getAttribute('data-submenu');
+        const submenu = document.getElementById(`submenu-${submenuName}`);
+        const arrow = this.querySelector('svg');
+        
+        if (submenu) {
+          submenu.classList.toggle('hidden');
+          arrow?.classList.toggle('rotate-180');
+        }
+      });
+    });
+
+    // Close menu when clicking on a link
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (isMenuOpen) {
+          toggleMenu();
+        }
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const target = event.target;
+      if (isMenuOpen && !mobileMenu?.contains(target) && !mobileMenuButton?.contains(target)) {
+        toggleMenu();
+      }
+    });
+  });
+
+  // Contador regressivo
+  document.addEventListener('DOMContentLoaded', function() {
+    // Define a data final (15 dias a partir de agora)
+    const countDownDate = new Date().getTime() + (15 * 24 * 60 * 60 * 1000);
+    
+    // Atualiza o contador a cada segundo
+    const countdownTimer = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+      
+      // Calcula dias, horas, minutos e segundos
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+      // Atualiza os elementos HTML
+      const daysElement = document.getElementById('days');
+      const hoursElement = document.getElementById('hours');
+      const minutesElement = document.getElementById('minutes');
+      const secondsElement = document.getElementById('seconds');
+      
+      if (daysElement) daysElement.textContent = days.toString().padStart(2, '0');
+      if (hoursElement) hoursElement.textContent = hours.toString().padStart(2, '0');
+      if (minutesElement) minutesElement.textContent = minutes.toString().padStart(2, '0');
+      if (secondsElement) secondsElement.textContent = seconds.toString().padStart(2, '0');
+      
+      // Se o contador chegou ao fim
+      if (distance < 0) {
+        clearInterval(countdownTimer);
+        if (daysElement) daysElement.textContent = '00';
+        if (hoursElement) hoursElement.textContent = '00';
+        if (minutesElement) minutesElement.textContent = '00';
+        if (secondsElement) secondsElement.textContent = '00';
+      }
+    }, 1000);
+  });
+
+  // Smooth scroll para links internos
+  document.addEventListener('DOMContentLoaded', function() {
+    const links = document.querySelectorAll('a[href^="#"]');
+    
+    links.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+          const headerOffset = 80; // Altura do header fixo
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  });
+</script>

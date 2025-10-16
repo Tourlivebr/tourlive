@@ -1,0 +1,445 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Site para Influencers | TourLive Brasil';
+const description = 'Profissionalize sua presença, gere parcerias e monetize com links de afiliados. Landing moderna, persuasiva e otimizada para conversão.';
+---
+
+<Layout title={title} description={description}>
+
+  <main>
+    <!-- Hero: foco total em conversão -->
+    <section class="relative mt-16 bg-neutral-900 py-16 overflow-hidden">
+      <!-- Vídeo de fundo - abordagem mais simples -->
+      <video 
+        id="heroVideo"
+        class="absolute inset-0 w-full h-full object-cover z-0" 
+        autoplay 
+        muted 
+        loop 
+        playsinline
+        style="opacity: 0.6;"
+      >
+        <source src="/images/influencer/head.mp4" type="video/mp4">
+        <!-- Fallback: imagem estática -->
+      </video>
+      
+      <!-- Imagem de fallback caso o vídeo não carregue -->
+      <div 
+        class="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat z-0"
+        style="background-image: url('/images/influencer/head.jpg'); opacity: 0.6;"
+        id="heroFallback"
+      ></div>
+      
+      <!-- Overlay para melhorar legibilidade -->
+      <div class="absolute inset-0 bg-black opacity-50 z-10"></div>
+      
+      <!-- Efeitos de luz -->
+      <div class="pointer-events-none absolute inset-0 -z-10">
+        <div class="absolute -top-24 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-primary-blue/30 blur-3xl"></div>
+        <div class="absolute bottom-0 right-12 h-48 w-48 rounded-full bg-primary-green/20 blur-2xl"></div>
+      </div>
+      
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+        <div class="mx-auto max-w-3xl text-center">
+          
+          <h1 class="mt-6 text-4xl sm:text-5xl font-extrabold text-white leading-tight drop-shadow-md">
+            Transforme sua <span class="text-primary-green">influência</span> em <span class="text-primary-blue">renda recorrente</span>
+          </h1>
+          <p class="mt-4 text-white text-lg drop-shadow-md font-medium">Site profissional que organiza suas parcerias, monetiza seus links e <span class="font-bold underline decoration-primary-green">aumenta suas comissões em até 300%</span>.</p>
+          <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#contato" class="group relative inline-flex items-center justify-center px-7 py-4 rounded-xl bg-primary-green hover:bg-green-600 text-white font-bold shadow-lg ring-1 ring-white/20 transition overflow-hidden">
+              <span class="absolute -right-1 -top-1 h-8 w-8 rounded-full bg-white/20 blur animate-ping"></span>
+              <span>QUERO MONETIZAR MINHA AUDIÊNCIA</span>
+            </a>
+            <a href="https://gramadodiferente.tur.br" target="_blank" class="inline-flex items-center justify-center px-7 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold ring-1 ring-white/20 transition shadow-lg">
+              <span>Case de sucesso</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
+          <div class="mt-6 p-3 rounded-lg bg-black/40 inline-block shadow-lg">
+            <p class="text-white text-sm font-medium">Já ajudamos <span class="font-bold text-primary-green">+30 influencers</span> a monetizarem sua audiência</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Storytelling + Prova Social -->
+    <section class="bg-white py-14">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl">
+          <div class="text-center mb-10">
+            <h2 class="text-3xl sm:text-4xl font-bold text-neutral-900">Seu <span class="text-primary-blue">site profissional</span> que <span class="underline decoration-primary-green decoration-4">vende por você</span></h2>
+            <p class="mt-4 text-neutral-700 text-lg">Enquanto outros influencers perdem oportunidades, você terá um hub central para <strong>todas as suas parcerias</strong> e <strong>links monetizados</strong>.</p>
+          </div>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-neutral-50 p-6 rounded-xl border border-neutral-200">
+              <h3 class="font-bold text-lg text-neutral-900 mb-3">😓 Sem um site profissional</h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span class="text-red-500 mr-2">✖</span>
+                  <span class="text-neutral-700">Links perdidos em bios limitadas</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-500 mr-2">✖</span>
+                  <span class="text-neutral-700">Parcerias rejeitadas por falta de profissionalismo</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-500 mr-2">✖</span>
+                  <span class="text-neutral-700">Comissões perdidas sem rastreamento</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-red-500 mr-2">✖</span>
+                  <span class="text-neutral-700">Seguidores que não se convertem em clientes</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="bg-primary-green/5 p-6 rounded-xl border border-primary-green/20">
+              <h3 class="font-bold text-lg text-neutral-900 mb-3">😍 Com seu site TourLive</h3>
+              <ul class="space-y-2">
+                <li class="flex items-start">
+                  <span class="text-primary-green mr-2">✓</span>
+                  <span class="text-neutral-700">Central profissional para todas suas indicações</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary-green mr-2">✓</span>
+                  <span class="text-neutral-700">Mais parcerias com marcas premium</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary-green mr-2">✓</span>
+                  <span class="text-neutral-700">Comissões automáticas com UTMs personalizados</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary-green mr-2">✓</span>
+                  <span class="text-neutral-700">Conversão de seguidores em clientes reais</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefícios essenciais em chips -->
+    <section class="bg-neutral-50 py-14">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl sm:text-3xl font-bold text-neutral-900">Tudo que você precisa para <span class="text-primary-blue">monetizar sua audiência</span></h2>
+          <p class="mt-3 text-neutral-700">Seu site completo com todas as ferramentas para transformar seguidores em clientes</p>
+        </div>
+        
+        <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {[
+            { icon: '🚀', label: 'Campanhas ADS otimizadas (Google & Meta)', desc: 'Atraia tráfego qualificado' },
+            { icon: '🎭', label: 'Apresente sua história e personalidade', desc: 'Conecte-se com sua audiência' },
+            { icon: '📝', label: 'Blog exclusivo com SEO', desc: 'Atraia tráfego orgânico' },
+            { icon: '🤝', label: 'Parcerias e marcas em destaque', desc: 'Atraia novas oportunidades' },
+            { icon: '💰', label: 'Links de afiliados com UTMs', desc: 'Comissões automáticas' },
+            { icon: '🔗', label: 'Link profissional para bio', desc: 'Instagram, TikTok e WhatsApp' },
+            { icon: '📱', label: 'Design otimizado para celular', desc: 'Experiência perfeita em qualquer dispositivo' },
+            { icon: '🛠️', label: 'Suporte e hospedagem inclusos', desc: 'Sem preocupações técnicas' }
+          ].map((b) => (
+            <div class="group flex flex-col h-full rounded-xl bg-white p-5 ring-1 ring-neutral-200 shadow-sm hover:shadow-md hover:scale-105 transition duration-300">
+              <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary-green/10 text-2xl mb-3">{b.icon}</div>
+              <h3 class="text-base font-bold text-neutral-800 mb-1">{b.label}</h3>
+              <p class="text-sm text-neutral-600 mt-auto">{b.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Como funciona (objetivo e simples) -->
+    <section class="bg-white py-14">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl">
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold text-neutral-900">Processo <span class="text-primary-blue">simples</span> e <span class="text-primary-green">rápido</span></h3>
+            <p class="mt-2 text-neutral-700">Do contrato ao site no ar em apenas 5 dias úteis</p>
+          </div>
+          
+          <div class="relative">
+                   
+            <div class="relative grid gap-8">
+              <div class="flex items-center gap-4">
+                <div class="flex-shrink-0 h-12 w-12 rounded-full bg-primary-blue text-white flex items-center justify-center text-xl font-bold shadow-md z-10">1</div>
+                <div class="flex-grow p-5 rounded-xl bg-neutral-50 border border-neutral-200">
+                  <h4 class="font-bold text-neutral-900">Contrato e pagamento</h4>
+                  <p class="text-neutral-700 text-sm mt-1">Escolha o plano ideal para você e faça o pagamento de forma segura</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center gap-4">
+                <div class="flex-shrink-0 h-12 w-12 rounded-full bg-primary-blue text-white flex items-center justify-center text-xl font-bold shadow-md z-10">2</div>
+                <div class="flex-grow p-5 rounded-xl bg-neutral-50 border border-neutral-200">
+                  <h4 class="font-bold text-neutral-900">Envio de materiais</h4>
+                  <p class="text-neutral-700 text-sm mt-1">Envie suas fotos, bio, links e informações para personalização</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center gap-4">
+                <div class="flex-shrink-0 h-12 w-12 rounded-full bg-primary-blue text-white flex items-center justify-center text-xl font-bold shadow-md z-10">3</div>
+                <div class="flex-grow p-5 rounded-xl bg-neutral-50 border border-neutral-200">
+                  <h4 class="font-bold text-neutral-900">Nós fazemos o restante pra você</h4>
+                  <p class="text-neutral-700 text-sm mt-1">Desenvolvimento, configuração de UTMs e publicação do seu site</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center gap-4">
+                <div class="flex-shrink-0 h-12 w-12 rounded-full bg-primary-green text-white flex items-center justify-center text-xl font-bold shadow-md z-10">✓</div>
+                <div class="flex-grow p-5 rounded-xl bg-primary-green/5 border border-primary-green/20">
+                  <h4 class="font-bold text-neutral-900">Seu site no ar gerando comissões!</h4>
+                  <p class="text-neutral-700 text-sm mt-1">Comece a monetizar sua audiência e conquistar novas parcerias</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Investimento -->
+    <section class="py-14 bg-gradient-to-r from-purple-600 to-indigo-700 text-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center mb-8">
+          <h2 class="text-3xl sm:text-4xl font-bold">Investimento</h2>
+          <p class="mt-3 text-lg text-purple-100">Tudo o que você precisa para destacar sua presença online</p>
+        </div>
+        
+        <div class="mx-auto max-w-3xl bg-white rounded-xl shadow-xl p-8 text-center">
+          <div class="animate-pulse mb-4">
+            <span class="px-4 py-2 text-sm font-bold text-red-600 bg-red-50 rounded-full ring-1 ring-red-200 uppercase tracking-wider">
+              Promoção por tempo limitado
+            </span>
+          </div>
+          
+          <div class="space-y-6">
+            <div class="flex flex-col items-center">
+              <p class="text-gray-500 text-xl">O que está incluído:</p>
+              <ul class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-3 text-left">
+                <li class="flex items-start">
+                  <span class="text-green-500 mr-2 mt-0.5">✓</span>
+                  <span class="text-gray-700">Site personalizado com sua identidade</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-500 mr-2 mt-0.5">✓</span>
+                  <span class="text-gray-700">Domínio .com.br ou .tur.br por 1 ano</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-500 mr-2 mt-0.5">✓</span>
+                  <span class="text-gray-700">Hospedagem e suporte técnico</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-500 mr-2 mt-0.5">✓</span>
+                  <span class="text-gray-700">Integração com WhatsApp e redes sociais</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="pt-4 border-t border-gray-100">
+              <div class="flex items-center justify-center">
+                <span class="text-gray-400 line-through text-2xl mr-3">De R$ 1.500,00</span>
+                <span class="text-gray-800 text-2xl font-medium">por apenas</span>
+              </div>
+              
+              <div class="mt-2 flex flex-col items-center">
+                <span class="text-5xl font-extrabold text-indigo-600">R$ 599,00</span>
+                <span class="mt-1 text-sm bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full">à vista (economize R$ 901,00)</span>
+              </div>
+              
+              <div class="mt-4">
+                <span class="text-2xl font-bold text-gray-700">ou 10x de <span class="text-indigo-600">R$ 80,00</span></span>
+                <span class="text-gray-500 block mt-1">no boleto</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-8">
+            <a href="#contato" class="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-primary-green hover:bg-green-600 text-white font-bold text-lg shadow-lg transition-all hover:scale-105">
+              GARANTIR MINHA VAGA AGORA
+            </a>
+            <p class="text-gray-600 text-sm mt-3">Prazo de entrega: <span class="font-semibold">5 dias úteis</span> após envio do conteúdo</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulário (âncora de conversão) -->
+    <section id="contato" class="py-16 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center mb-8">
+          <h2 class="text-2xl sm:text-3xl font-bold text-neutral-900">Pronto para <span class="text-primary-blue">monetizar</span> sua audiência?</h2>
+          <p class="mt-3 text-neutral-700">Preencha o formulário abaixo e nossa equipe entrará em contato em até 24h</p>
+        </div>
+        
+        <div class="mx-auto max-w-xl bg-white p-6 rounded-xl border border-neutral-200 shadow-md">
+          <form id="contactForm" class="space-y-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label for="name" class="block text-sm font-medium text-neutral-700 mb-1">Nome completo</label>
+                <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition" placeholder="Seu nome" required>
+              </div>
+              <div>
+                <label for="instagram" class="block text-sm font-medium text-neutral-700 mb-1">Instagram</label>
+                <input type="text" id="instagram" name="instagram" class="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition" placeholder="@seuperfil">
+              </div>
+            </div>
+            
+            <div>
+              <label for="email" class="block text-sm font-medium text-neutral-700 mb-1">Email</label>
+              <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition" placeholder="seu@email.com" required>
+            </div>
+            
+            <div>
+              <label for="phone" class="block text-sm font-medium text-neutral-700 mb-1">WhatsApp</label>
+              <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition" placeholder="(00) 00000-0000" required>
+            </div>
+            
+            <div>
+              <label for="message" class="block text-sm font-medium text-neutral-700 mb-1">Mensagem (opcional)</label>
+              <textarea id="message" name="message" rows="3" class="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition" placeholder="Conte um pouco sobre seu perfil e objetivos..."></textarea>
+            </div>
+            
+            <div class="pt-2">
+              <button type="submit" class="w-full bg-primary-green hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-all hover:shadow-lg flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                </svg>
+                Enviar via WhatsApp
+              </button>
+            </div>
+            
+            <div class="text-center text-sm text-neutral-600">
+              <p>🔒 Seus dados estão seguros conosco</p>
+            </div>
+          </form>
+          
+          <script>
+            // WhatsApp Form Handler para página Influencer
+            document.addEventListener('DOMContentLoaded', function() {
+              const form = document.getElementById('contactForm');
+              const whatsappNumber = '5554993220552'; // Número do WhatsApp da empresa
+              
+              if (!form) return;
+              
+              form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(form);
+                const data = {
+                  name: formData.get('name'),
+                  email: formData.get('email'),
+                  phone: formData.get('phone'),
+                  instagram: formData.get('instagram'),
+                  message: formData.get('message')
+                };
+                
+                // Validate required fields
+                if (!data.name || !data.email || !data.phone) {
+                  alert('Por favor, preencha todos os campos obrigatórios.');
+                  return;
+                }
+                
+                // Format WhatsApp message with emojis
+                const message = 
+                  `🎯 *NOVO CONTATO - INFLUENCER*\n\n` +
+                  `👤 *Nome:* ${data.name}\n` +
+                  `📧 *E-mail:* ${data.email}\n` +
+                  `📱 *WhatsApp:* ${data.phone}\n` +
+                  (data.instagram ? `📸 *Instagram:* ${data.instagram}\n` : '') +
+                  (data.message && data.message.trim() !== '' ? `💬 *Mensagem:*\n${data.message}\n` : '') +
+                  `\n📅 *Enviado em:* ${new Date().toLocaleString('pt-BR')}\n` +
+                  `\n🚀 *Aguardo retorno em até 24h!*`;
+                
+                // Encode message for URL (preserving emojis)
+                const encodedMessage = encodeURIComponent(message);
+                
+                // Create WhatsApp URL
+                const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+                
+                // Open WhatsApp
+                window.open(whatsappUrl, '_blank');
+                
+                // Show success message
+                showSuccessMessage();
+                
+                // Reset form
+                form.reset();
+              });
+              
+              // Success message function
+              function showSuccessMessage() {
+                const button = form.querySelector('button[type="submit"]');
+                const originalText = button.innerHTML;
+                
+                button.innerHTML = `
+                  <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span>Mensagem Enviada!</span>
+                `;
+                
+                setTimeout(() => {
+                  button.innerHTML = originalText;
+                }, 3000);
+              }
+              
+              // Phone mask
+              const phoneInput = document.getElementById('phone');
+              if (phoneInput) {
+                phoneInput.addEventListener('input', function(e) {
+                  let value = e.target.value.replace(/\D/g, '');
+                  
+                  if (value.length <= 11) {
+                    value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+                    if (value.length < 14) {
+                      value = value.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
+                    }
+                  }
+                  
+                  e.target.value = value;
+                });
+              }
+            });
+          </script>
+        </div>
+        
+        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
+          <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="text-sm text-neutral-700">Resposta em até 24h</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="text-sm text-neutral-700">Sem compromisso</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="text-sm text-neutral-700">Suporte personalizado</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  /* Micro melhorias visuais sem exagero de IA */
+  .bg-gradient-radial {
+    background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 60%);
+  }
+</style>

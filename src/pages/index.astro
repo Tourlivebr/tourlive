@@ -1,0 +1,308 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import HeroCarousel from '../components/HeroCarousel.astro';
+import SectionIntro from '../components/SectionIntro.astro';
+import Benefits from '../components/Benefits.astro';
+import Products from '../components/Products.astro';
+import Clients from '../components/Clients.astro';
+
+import WhatsForm from '../components/WhatsForm.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+import { siteData } from '../data/site.ts';
+
+// SEO Data
+const title = 'Turismo Interativo | Mapas com Guia Falante e Analytics';
+const description = 'Especialistas em tecnologia para turismo interativo. Mapas interativos com áudio-guia, geolocalização, analytics e SEO local. Aumente a satisfação dos visitantes e a receita do seu destino.';
+const canonical = 'https://tourlivebrl.com';
+const ogImage = 'https://tourlivebrl.com/og-image.jpg';
+---
+
+<Layout 
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogImage={ogImage}
+>
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${canonical}#organization`,
+        "name": siteData.company.name,
+        "url": canonical,
+        "logo": {
+          "@type": "ImageObject",
+          "url": `${canonical}/logo.png`,
+          "width": 200,
+          "height": 60
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": siteData.company.phone,
+          "contactType": "customer service",
+          "availableLanguage": "Portuguese"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "São Paulo",
+          "addressRegion": "SP",
+          "addressCountry": "BR",
+          "streetAddress": siteData.company.address
+        },
+        "sameAs": [
+          "https://linkedin.com/company/tourlivebrl",
+          "https://instagram.com/tourlivebrl",
+          "https://facebook.com/tourlivebrl"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${canonical}#website`,
+        "url": canonical,
+        "name": title,
+        "description": description,
+        "publisher": {
+          "@id": `${canonical}#organization`
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": `${canonical}/search?q={search_term_string}`
+          },
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${canonical}#webpage`,
+        "url": canonical,
+        "name": title,
+        "isPartOf": {
+          "@id": `${canonical}#website`
+        },
+        "about": {
+          "@id": `${canonical}#organization`
+        },
+        "description": description,
+        "breadcrumb": {
+          "@id": `${canonical}#breadcrumb`
+        },
+        "inLanguage": "pt-BR",
+        "potentialAction": [
+          {
+            "@type": "ReadAction",
+            "target": [canonical]
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${canonical}#breadcrumb`,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": canonical
+          }
+        ]
+      },
+      ...siteData.products.map((product, index) => ({
+        "@type": "Product",
+        "@id": `${canonical}#product-${index + 1}`,
+        "name": product.title,
+        "description": product.description,
+        "brand": {
+          "@id": `${canonical}#organization`
+        },
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/InStock",
+          "priceCurrency": "BRL",
+          "seller": {
+            "@id": `${canonical}#organization`
+          }
+        }
+      })),
+      ...siteData.testimonials.map((testimonial, index) => ({
+        "@type": "Review",
+        "@id": `${canonical}#review-${index + 1}`,
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": 5,
+          "bestRating": 5
+        },
+        "author": {
+          "@type": "Person",
+          "name": testimonial.name
+        },
+        "reviewBody": testimonial.comment,
+        "itemReviewed": {
+          "@id": `${canonical}#organization`
+        }
+      }))
+    ]
+  })}
+  ></script>
+
+  <!-- Page Content -->
+  <Header />
+  
+  <main>
+    <HeroCarousel />
+    
+    <SectionIntro />
+    <Benefits />
+    <Products />
+    <Clients />
+    
+    <!-- Social Proof Section -->
+
+    
+
+    <WhatsForm />
+  </main>
+  
+  <Footer />
+  
+  <!-- Botão Flutuante WhatsApp -->
+  <WhatsAppFloat />
+</Layout>
+
+<style>
+  /* Custom scrollbar for webkit browsers */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #0ea5e9, #16a34a);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #0284c7, #15803d);
+  }
+  
+  /* Smooth scrolling for all browsers */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Focus styles for accessibility */
+  *:focus {
+    outline: 2px solid #0ea5e9;
+    outline-offset: 2px;
+  }
+  
+  /* Skip to content link for screen readers */
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #0ea5e9;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 1000;
+  }
+  
+  .skip-link:focus {
+    top: 6px;
+  }
+</style>
+
+<script>
+  // Performance optimizations
+  document.addEventListener('DOMContentLoaded', function() {
+    // Lazy load images that are not in viewport
+    if ('IntersectionObserver' in window) {
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            if (img.dataset.src) {
+              img.src = img.dataset.src;
+              img.removeAttribute('data-src');
+            }
+            observer.unobserve(img);
+          }
+        });
+      });
+      
+      document.querySelectorAll('img[data-src]').forEach(img => {
+        imageObserver.observe(img);
+      });
+    }
+    
+    // Preload critical resources
+    const preloadLinks = [
+      { href: '/fonts/inter-var.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }
+    ];
+    
+    preloadLinks.forEach(link => {
+      const linkElement = document.createElement('link');
+      linkElement.rel = 'preload';
+      linkElement.href = link.href;
+      linkElement.as = link.as;
+      if (link.type) linkElement.type = link.type;
+      if (link.crossorigin) linkElement.crossOrigin = link.crossorigin;
+      document.head.appendChild(linkElement);
+    });
+    
+    // Analytics and tracking (placeholder)
+    // Replace with your actual analytics code
+    if (typeof gtag !== 'undefined') {
+      gtag('config', 'GA_MEASUREMENT_ID', {
+        page_title: document.title,
+        page_location: window.location.href
+      });
+    }
+    
+    // Service Worker registration for PWA capabilities
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => {
+            console.log('SW registered: ', registration);
+          })
+          .catch(registrationError => {
+            console.log('SW registration failed: ', registrationError);
+          });
+      });
+    }
+  });
+  
+  // Error tracking
+  window.addEventListener('error', function(e) {
+    // Send error to analytics or error tracking service
+    console.error('JavaScript error:', e.error);
+  });
+  
+  // Performance monitoring
+  window.addEventListener('load', function() {
+    // Measure and report performance metrics
+    if ('performance' in window) {
+      const perfData = performance.getEntriesByType('navigation')[0];
+      const loadTime = perfData.loadEventEnd - perfData.loadEventStart;
+      
+      // Report to analytics
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'timing_complete', {
+          name: 'load',
+          value: Math.round(loadTime)
+        });
+      }
+    }
+  });
+</script>
