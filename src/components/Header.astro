@@ -4,7 +4,7 @@ import { siteData } from '../data/site.ts';
 
 <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16 lg:h-20">
+    <div class="flex items-center justify-between h-14 lg:h-16">
       <!-- Logo -->
       <div class="flex-shrink-0">
         <a href="/" class="flex items-center">
@@ -237,7 +237,7 @@ import { siteData } from '../data/site.ts';
           const selector = href.startsWith('/#') ? href.slice(1) : href; // '/#id' -> '#id'
           const target = document.querySelector(selector);
           if (target) {
-            const headerHeight = 80; // Account for fixed header
+            const headerHeight = header?.offsetHeight ?? 80; // altura dinâmica do header
             const targetPosition = target.offsetTop - headerHeight;
             window.scrollTo({
               top: targetPosition,
