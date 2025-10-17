@@ -268,7 +268,7 @@ export const siteData = {
       name: "Produtos", 
       href: "/#produtos",
       submenu: [
-        { name: "Sites Comerciais", href: "/sites-comerciais" },
+        { name: "Site para Guias e Motoristas de App", href: "/mot-app" },
         { name: "Site para Influencers", href: "/influencer" }
       ]
     },
