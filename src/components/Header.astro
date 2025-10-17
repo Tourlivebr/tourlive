@@ -2,7 +2,7 @@
 import { siteData } from '../data/site.ts';
 ---
 
-<header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm transition-all duration-300">
+<header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16 lg:h-20">
       <!-- Logo -->
@@ -225,13 +225,17 @@ import { siteData } from '../data/site.ts';
       }
     });
 
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    // Smooth scrolling for anchor links (supports '#id' and '/#id' on home)
+    document.querySelectorAll('a[href^="#"], a[href^="/#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
-        e.preventDefault();
         const href = this.getAttribute('href');
-        if (href && href !== '#') {
-          const target = document.querySelector(href);
+        if (!href) return;
+
+        const isHomeAnchor = href.startsWith('#') || (href.startsWith('/#') && window.location.pathname === '/');
+        if (isHomeAnchor) {
+          e.preventDefault();
+          const selector = href.startsWith('/#') ? href.slice(1) : href; // '/#id' -> '#id'
+          const target = document.querySelector(selector);
           if (target) {
             const headerHeight = 80; // Account for fixed header
             const targetPosition = target.offsetTop - headerHeight;
@@ -241,6 +245,7 @@ import { siteData } from '../data/site.ts';
             });
           }
         }
+        // If not on home, allow normal navigation to '/#...'
       });
     });
   });

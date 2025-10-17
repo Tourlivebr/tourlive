@@ -262,17 +262,18 @@ export const siteData = {
   },
 
   navigation: [
-    { name: "Soluções", href: "#solucoes" },
+    { name: "Início", href: "/" },
+    { name: "Soluções", href: "/#solucoes" },
     { 
       name: "Produtos", 
-      href: "#produtos",
+      href: "/#produtos",
       submenu: [
         { name: "Sites Comerciais", href: "/sites-comerciais" },
         { name: "Site para Influencers", href: "/influencer" }
       ]
     },
-    { name: "Clientes", href: "#clientes" },
-    { name: "Depoimentos", href: "#depoimentos" },
-    { name: "Contato", href: "#contato" }
+    { name: "Clientes", href: "/#clientes" },
+    { name: "Depoimentos", href: "/#depoimentos" },
+    { name: "Contato", href: "/#contato" }
   ]
 };
