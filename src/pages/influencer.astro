@@ -2,11 +2,36 @@
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
 
+// SEO Data
 const title = 'Site para Influencers | TourLive Brasil';
 const description = 'Profissionalize sua presença, gere parcerias e monetize com links de afiliados. Landing moderna, persuasiva e otimizada para conversão.';
+const canonical = "https://tourlivebrasil.com.br/influencer";
+const image = "/images/influencer/capa.jpg";
 ---
 
-<Layout title={title} description={description}>
+<Layout 
+  title={title} 
+  description={description}
+  canonical={canonical}
+  image={image}
+>
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Site para Influencers",
+    "description": "Profissionalize sua presença, gere parcerias e monetize com links de afiliados. Landing moderna, persuasiva e otimizada para conversão.",
+    "image": "https://tourlivebrasil.com.br/images/influencer/capa.jpg",
+    "brand": {
+      "@type": "Brand",
+      "name": "TourLive Brasil"
+    },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "BRL",
+      "availability": "https://schema.org/InStock"
+    }
+  })} />
 
   <main>
     <!-- Hero: foco total em conversão -->

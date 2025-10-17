@@ -1,15 +1,52 @@
 ---
 import Header from "../components/Header.astro";
-const { title = "TourLive Turismo Interativo" } = Astro.props;
+const { 
+    title = "TourLive Turismo Interativo",
+    description = "Soluções digitais para o turismo: sites comerciais, aplicativos para guias e motoristas, e estratégias para influencers.",
+    canonical,
+    image = "/images/logo_tourlive1.png",
+    ogType = "website"
+} = Astro.props;
+
+// Obter URL canônica
+const siteUrl = "https://tourlivebrasil.com.br";
+const canonicalURL = canonical || new URL(Astro.url.pathname, siteUrl);
 ---
 <!doctype html>
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" type="image/svg+xml" href="/pin-favicon.svg" />
         <meta name="generator" content={Astro.generator} />
+        
+        <!-- SEO Básico -->
         <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="canonical" href={canonicalURL} />
+        
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content={ogType} />
+        <meta property="og:url" content={canonicalURL} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={new URL(image, siteUrl)} />
+        
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={canonicalURL} />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={description} />
+        <meta property="twitter:image" content={new URL(image, siteUrl)} />
+        
+        <!-- Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XXXXXXXXXX');
+        </script>
     </head>
     <body>
         <Header />

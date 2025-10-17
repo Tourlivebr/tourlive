@@ -13,18 +13,50 @@ import WhatsAppFloat from '../components/WhatsAppFloat.astro';
 import { siteData } from '../data/site.ts';
 
 // SEO Data
-const title = 'Turismo Interativo | Mapas com Guia Falante e Analytics';
-const description = 'Especialistas em tecnologia para turismo interativo. Mapas interativos com áudio-guia, geolocalização, analytics e SEO local. Aumente a satisfação dos visitantes e a receita do seu destino.';
-const canonical = 'https://tourlivebrl.com';
-const ogImage = 'https://tourlivebrl.com/og-image.jpg';
+const title = 'TourLive Brasil | Soluções Digitais para Turismo Interativo';
+const description = 'Especialistas em tecnologia para turismo interativo. Mapas interativos com áudio-guia, sites comerciais, aplicativos para guias e motoristas, e estratégias para influencers. Aumente a satisfação dos visitantes e a receita do seu destino.';
+const canonical = 'https://tourlivebrasil.com.br';
+const image = '/images/logo_tourlive1.png';
 ---
 
 <Layout 
   title={title}
   description={description}
   canonical={canonical}
-  ogImage={ogImage}
+  image={image}
 >
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TourLive Brasil",
+    "url": "https://tourlivebrasil.com.br",
+    "logo": "https://tourlivebrasil.com.br/images/logo_tourlive1.png",
+    "description": "Especialistas em tecnologia para turismo interativo. Mapas interativos com áudio-guia, sites comerciais, aplicativos para guias e motoristas, e estratégias para influencers.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Brasil"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+55-XX-XXXXX-XXXX",
+      "contactType": "customer service"
+    },
+    "sameAs": [
+      "https://www.facebook.com/tourlivebrasil",
+      "https://www.instagram.com/tourlivebrasil"
+    ]
+  })} />
+
+  <HeroCarousel />
+  <SectionIntro />
+  <Benefits />
+  <Products />
+  <Clients />
+  <WhatsForm />
+  <Footer />
+  <WhatsAppFloat />
+</Layout>
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
