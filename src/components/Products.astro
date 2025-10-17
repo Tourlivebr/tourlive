@@ -76,15 +76,38 @@ import { siteData } from '../data/site.ts';
             
             <!-- CTA Button -->
             <div class="relative z-10">
-              <a 
-                href="/mot-app"
-                class="inline-flex items-center justify-center w-full px-6 py-4 bg-gradient-to-r from-primary-blue to-primary-green hover:from-blue-600 hover:to-green-600 text-white font-semibold rounded-2xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 group-hover:scale-105"
-              >
-                Saiba Mais
-                <svg class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                </svg>
-              </a>
+              {index === 2 ? (
+                <div class="flex flex-col space-y-3">
+                  <a 
+                    href="/mot-app"
+                    class="inline-flex items-center justify-center w-full px-6 py-3 bg-gradient-to-r from-primary-blue to-primary-darkblue hover:from-blue-600 hover:to-blue-800 text-white font-semibold rounded-2xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 group-hover:scale-105"
+                  >
+                    Site para Guias e Motoristas de App
+                    <svg class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                  </a>
+                  <a 
+                    href="/influencer"
+                    class="inline-flex items-center justify-center w-full px-6 py-3 bg-gradient-to-r from-primary-green to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold rounded-2xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 group-hover:scale-105"
+                  >
+                    Site para Influencer
+                    <svg class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                  </a>
+                </div>
+              ) : (
+                <a 
+                  href={product.href || "#"}
+                  class="inline-flex items-center justify-center w-full px-6 py-4 bg-gradient-to-r from-primary-blue to-primary-green hover:from-blue-600 hover:to-green-600 text-white font-semibold rounded-2xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 group-hover:scale-105"
+                >
+                  Saiba Mais
+                  <svg class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </a>
+              )}
             </div>
             
             <!-- Hover Effect Gradient -->
