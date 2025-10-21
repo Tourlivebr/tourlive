@@ -269,7 +269,8 @@ export const siteData = {
       href: "/#produtos",
       submenu: [
         { name: "Site para Guias e Motoristas de App", href: "/mot-app" },
-        { name: "Site para Influencers", href: "/influencer" }
+        { name: "Site para Influencers", href: "/influencer" },
+        { name: "Site para Casa por Temporada", href: "/casa-temporada" }
       ]
     },
     { name: "Clientes", href: "/#clientes" },

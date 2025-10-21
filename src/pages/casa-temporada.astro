@@ -1,0 +1,187 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+
+// SEO Data
+const title = 'Site para Casa por Temporada | TourLive Brasil';
+const description = 'Aumente reservas e ocupação da sua casa de temporada com um site profissional: calendário, fotos, WhatsApp e SEO local.';
+const canonical = 'https://tourlivebrasil.com.br/casa-temporada';
+const image = '/images/hero-2.jpg';
+---
+
+<Layout 
+  title={title} 
+  description={description}
+  canonical={canonical}
+  image={image}
+>
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Site para Casa por Temporada",
+    "description": "Site profissional para aluguel por temporada com calendário, fotos otimizadas, integração WhatsApp e SEO local.",
+    "image": "https://tourlivebrasil.com.br/images/hero-2.jpg",
+    "brand": {"@type": "Brand", "name": "TourLive Brasil"},
+    "offers": {"@type": "Offer", "priceCurrency": "BRL", "availability": "https://schema.org/InStock"}
+  })} />
+
+  <main>
+    <!-- Hero -->
+    <section class="relative mt-16 bg-neutral-900 py-16 overflow-hidden">
+      <div class="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat z-0" style="background-image: url('/images/hero-2.jpg'); opacity: 0.6;"></div>
+      <div class="absolute inset-0 bg-black opacity-50 z-10"></div>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+        <div class="mx-auto max-w-3xl text-center">
+          <h1 class="mt-6 text-4xl sm:text-5xl font-extrabold text-white leading-tight drop-shadow-md">
+            Mais <span class="text-primary-green">reservas</span> para sua <span class="text-primary-blue">casa por temporada</span>
+          </h1>
+          <p class="mt-4 text-white text-lg drop-shadow-md font-medium">Site profissional com calendário de disponibilidade, fotos otimizadas, integração WhatsApp e SEO local que destaca seu imóvel nos buscadores.</p>
+          <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#contato" class="group relative inline-flex items-center justify-center px-7 py-4 rounded-xl bg-primary-green hover:bg-green-600 text-white font-bold shadow-lg ring-1 ring-white/20 transition overflow-hidden">
+              <span class="absolute -right-1 -top-1 h-8 w-8 rounded-full bg-white/20 blur animate-ping"></span>
+              <span>QUERO MAIS RESERVAS</span>
+            </a>
+            <a href="/" class="inline-flex items-center justify-center px-7 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold ring-1 ring-white/20 transition shadow-lg">
+              <span>Ver outros produtos</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefícios -->
+    <section class="bg-neutral-50 py-14">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl sm:text-3xl font-bold text-neutral-900">Vantagens de ter um <span class="text-primary-blue">site profissional</span></h2>
+          <p class="mt-3 text-neutral-700">Transforme visualizações em reservas com experiência otimizada e conteúdo persuasivo</p>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {[
+            { icon: '📅', label: 'Calendário de disponibilidade', desc: 'Evite consultas repetidas e facilite a reserva' },
+            { icon: '🖼️', label: 'Galeria de fotos otimizada', desc: 'Impressione com imagens rápidas e nítidas' },
+            { icon: '📍', label: 'SEO local', desc: 'Apareça para quem busca na sua região' },
+            { icon: '💬', label: 'WhatsApp integrado', desc: 'Receba pedidos e cotações em segundos' },
+            { icon: '⭐', label: 'Depoimentos e avaliações', desc: 'Aumente a confiança e conversão' },
+            { icon: '🛡️', label: 'Políticas e regras claras', desc: 'Evite problemas e garanta segurança' },
+            { icon: '🧭', label: 'Mapa e pontos de interesse', desc: 'Ajude o hóspede a planejar melhor' },
+            { icon: '⚡', label: 'Performance e hospedagem incluídas', desc: 'Site rápido sempre disponível' }
+          ].map((b) => (
+            <div class="group flex flex-col h-full rounded-xl bg-white p-5 ring-1 ring-neutral-200 shadow-sm hover:shadow-md hover:scale-105 transition duration-300">
+              <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary-green/10 text-2xl mb-3">{b.icon}</div>
+              <h3 class="text-base font-bold text-neutral-800 mb-1">{b.label}</h3>
+              <p class="text-sm text-neutral-600 mt-auto">{b.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Como funciona -->
+    <section class="bg-white py-14">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center mb-8">
+          <h3 class="text-2xl font-bold text-neutral-900">Processo <span class="text-primary-blue">simples</span> e <span class="text-primary-green">rápido</span></h3>
+          <p class="mt-2 text-neutral-700">Publicamos seu site em até 5 dias úteis</p>
+        </div>
+        <div class="relative grid gap-8 max-w-3xl mx-auto">
+          <div class="flex items-center gap-4">
+            <div class="flex-shrink-0 h-12 w-12 rounded-full bg-primary-blue text-white flex items-center justify-center text-xl font-bold shadow-md z-10">1</div>
+            <div class="flex-grow p-5 rounded-xl bg-neutral-50 border border-neutral-200">
+              <h4 class="font-bold text-neutral-900">Contrato e briefing</h4>
+              <p class="text-neutral-700 text-sm mt-1">Definimos identidade, regras e diferenciais do seu imóvel</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="flex-shrink-0 h-12 w-12 rounded-full bg-primary-blue text-white flex items-center justify-center text-xl font-bold shadow-md z-10">2</div>
+            <div class="flex-grow p-5 rounded-xl bg-neutral-50 border border-neutral-200">
+              <h4 class="font-bold text-neutral-900">Envio de fotos e informações</h4>
+              <p class="text-neutral-700 text-sm mt-1">Galeria, localização, comodidades e políticas</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="flex-shrink-0 h-12 w-12 rounded-full bg-primary-blue text-white flex items-center justify-center text-xl font-bold shadow-md z-10">3</div>
+            <div class="flex-grow p-5 rounded-xl bg-neutral-50 border border-neutral-200">
+              <h4 class="font-bold text-neutral-900">Configuração e publicação</h4>
+              <p class="text-neutral-700 text-sm mt-1">Integração com WhatsApp e otimizações de SEO</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="flex-shrink-0 h-12 w-12 rounded-full bg-primary-green text-white flex items-center justify-center text-xl font-bold shadow-md z-10">✓</div>
+            <div class="flex-grow p-5 rounded-xl bg-primary-green/5 border border-primary-green/20">
+              <h4 class="font-bold text-neutral-900">Site no ar recebendo reservas!</h4>
+              <p class="text-neutral-700 text-sm mt-1">Aumente ocupação e receita ao longo do ano</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulário -->
+    <section id="contato" class="py-16 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center mb-8">
+          <h2 class="text-2xl sm:text-3xl font-bold text-neutral-900">Pronto para <span class="text-primary-blue">lotar sua agenda</span>?</h2>
+          <p class="mt-3 text-neutral-700">Preencha e nossa equipe retorna em até 24h</p>
+        </div>
+        <div class="mx-auto max-w-xl bg-white p-6 rounded-xl border border-neutral-200 shadow-md">
+          <form id="contactFormRental" class="space-y-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label for="name" class="block text-sm font-medium text-neutral-700 mb-1">Nome</label>
+                <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition" placeholder="Seu nome" required>
+              </div>
+              <div>
+                <label for="property" class="block text-sm font-medium text-neutral-700 mb-1">Nome do imóvel</label>
+                <input type="text" id="property" name="property" class="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition" placeholder="Casa da Serra">
+              </div>
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-neutral-700 mb-1">Email</label>
+              <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition" placeholder="seu@email.com" required>
+            </div>
+            <div>
+              <label for="phone" class="block text-sm font-medium text-neutral-700 mb-1">WhatsApp</label>
+              <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition" placeholder="(00) 00000-0000" required>
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-neutral-700 mb-1">Mensagem (opcional)</label>
+              <textarea id="message" name="message" rows="3" class="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition" placeholder="Fale sobre o imóvel e seus objetivos..."></textarea>
+            </div>
+            <div class="pt-2">
+              <button type="submit" class="w-full bg-primary-green hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-all hover:shadow-lg">Enviar via WhatsApp</button>
+            </div>
+            <div class="text-center text-sm text-neutral-600">
+              <p>🔒 Seus dados estão seguros conosco</p>
+            </div>
+          </form>
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              const form = document.getElementById('contactFormRental');
+              const whatsappNumber = '5554993220552';
+              if (!form) return;
+              form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const data = new FormData(form);
+                const name = data.get('name');
+                const property = data.get('property');
+                const email = data.get('email');
+                const phone = data.get('phone');
+                const message = data.get('message') || '';
+                const text = `Olá, quero um site para minha casa por temporada!%0A%0A` +
+                  `Nome: ${name}%0AImóvel: ${property}%0AEmail: ${email}%0AWhatsApp: ${phone}%0A` +
+                  (message ? `Mensagem: ${message}%0A` : '');
+                const url = `https://wa.me/${whatsappNumber}?text=${text}`;
+                window.open(url, '_blank');
+              });
+            });
+          </script>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
