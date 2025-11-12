@@ -29,7 +29,13 @@ const image = '/images/hero-2.jpg';
   <main>
     <!-- Hero -->
     <section class="relative mt-16 bg-neutral-900 py-16 overflow-hidden">
-      <div class="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat z-0" style="background-image: url('/images/hero-2.jpg'); opacity: 0.6;"></div>
+      <!-- Fundo em carrossel horizontal -->
+      <div class="absolute inset-0 overflow-hidden z-0 hero-carousel" aria-hidden="true">
+        <div class="hero-carousel-track">
+          <div class="hero-slide" style="background-image: url('/images/temporada/banner-carrossel.jpg');"></div>
+          <div class="hero-slide" style="background-image: url('/images/temporada/banner-carrossel.jpg');"></div>
+        </div>
+      </div>
       <div class="absolute inset-0 bg-black opacity-50 z-10"></div>
 
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
@@ -185,3 +191,27 @@ const image = '/images/hero-2.jpg';
 
   <Footer />
 </Layout>
+
+<style>
+  .hero-carousel {
+    opacity: 0.6;
+  }
+  .hero-carousel-track {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    width: 200%;
+    height: 100%;
+    animation: slide-left 30s linear infinite;
+  }
+  .hero-slide {
+    width: 50%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+  @keyframes slide-left {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+</style>
