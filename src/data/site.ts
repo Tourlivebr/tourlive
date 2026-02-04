@@ -13,6 +13,7 @@ export interface Product {
   description: string;
   features: string[];
   icon: string;
+  href?: string;
 }
 
 export interface Benefit {
@@ -148,7 +149,8 @@ export const siteData = {
         "Engajamento: O público poderá avaliar e comentar sobre cada atração, ampliando a interação com o parque.",
         "Melhoria na Visualização do Mapa: Com os pins de marcação, os visitantes poderão identificar os atrativos do parque no maps."
       ],
-      icon: "🎯"
+      icon: "🎯",
+      href: "https://geolocalizacao-jet.vercel.app/"
     }
   ] as Product[],
 
