@@ -116,7 +116,8 @@ export const siteData = {
         "Áudio-guia com informações sobre as atrações",
         "Interface moderna com recursos multimídia integrados."
       ],
-      icon: "🗺️"
+      icon: "🗺️",
+      href: "https://mapainterativo.vercel.app/"
     },
     {
       id: 2,
@@ -270,6 +271,8 @@ export const siteData = {
       name: "Produtos", 
       href: "/#produtos",
       submenu: [
+        { name: "Mapa Interativo com Guia Falante", href: "https://mapainterativo.vercel.app/" },
+        { name: "SEO Local & Google Maps Ads", href: "https://geolocalizacao-jet.vercel.app/" },
         { name: "Site para Guias e Motoristas de App", href: "/mot-app" },
         { name: "Site para Influencers", href: "/influencer" },
         { name: "Site para Casa por Temporada", href: "/casa-temporada" }

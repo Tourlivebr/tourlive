@@ -13,13 +13,13 @@ import { siteData } from '../data/site.ts';
         data-slide={index}
       >
         <!-- Background Image with Effects -->
-        <div class="absolute inset-0 bg-gradient-to-r from-neutral-dark/70 via-neutral-dark/50 to-transparent z-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-neutral-dark/80 via-neutral-dark/60 to-transparent z-10"></div>
         <div 
           class="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-105 transition-transform duration-[8000ms] ease-out hover:scale-110"
           style={`background-image: url('${banner.image}'); background-attachment: fixed;`}
         ></div>
-        <!-- Overlay with gradient for better text readability -->
-        <div class="absolute inset-0 bg-gradient-to-br from-primary-blue/40 via-transparent to-primary-green/30 z-5"></div>
+        <!-- Overlay for better text readability -->
+        <div class="absolute inset-0 bg-neutral-dark/10 z-5"></div>
         
         <!-- Content -->
         <div class="relative z-20 flex items-center h-full">
@@ -34,7 +34,7 @@ import { siteData } from '../data/site.ts';
               <div class="flex flex-col sm:flex-row gap-4">
                 <a 
                   href={banner.link}
-                  class="inline-flex items-center justify-center px-8 py-4 bg-primary-green hover:bg-green-600 text-white font-bold rounded-2xl transition-all duration-200 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 text-center"
+                  class="inline-flex items-center justify-center px-8 py-4 bg-primary-blue hover:bg-primary-darkblue text-white font-bold rounded-2xl transition-all duration-200 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 text-center"
                 >
                   {banner.cta}
                   <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
