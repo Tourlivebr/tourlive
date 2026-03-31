@@ -15,19 +15,16 @@ import { siteData } from '../data/site.ts';
       <!-- Left Column - Content -->
       <div>
         <span class="inline-block px-4 py-2 bg-primary-blue/20 text-primary-blue font-semibold rounded-full text-sm mb-6">
-          Fale Conosco
+          Análise Gratuita
         </span>
         
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-          Pronto para transformar 
-          <span class="text-primary-blue">
-            seu destino?
-          </span>
+          Receba uma análise gratuita
+          <span class="text-primary-blue"> do seu parque</span>
         </h2>
         
         <p class="text-xl text-gray-300 mb-8 leading-relaxed">
-          Solicite um diagnóstico gratuito e descubra como nossa tecnologia pode 
-          aumentar a satisfação dos visitantes e a receita do seu destino.
+          Descubra o que hoje não aparece no Google, onde você está perdendo visibilidade e como aumentar a descoberta e o consumo do seu empreendimento.
         </p>
         
         <!-- Benefits List -->
@@ -38,7 +35,7 @@ import { siteData } from '../data/site.ts';
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
               </svg>
             </div>
-            <span class="text-gray-300">Diagnóstico gratuito em até 48h</span>
+            <span class="text-gray-300">Diagnóstico de pontos invisíveis no Google Maps</span>
           </div>
           <div class="flex items-center space-x-3">
             <div class="w-6 h-6 bg-primary-blue rounded-full flex items-center justify-center flex-shrink-0">
@@ -46,7 +43,7 @@ import { siteData } from '../data/site.ts';
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
               </svg>
             </div>
-            <span class="text-gray-300">Proposta personalizada sem compromisso</span>
+            <span class="text-gray-300">Identificação de gaps de visibilidade orgânica</span>
           </div>
           <div class="flex items-center space-x-3">
             <div class="w-6 h-6 bg-primary-blue rounded-full flex items-center justify-center flex-shrink-0">
@@ -54,7 +51,7 @@ import { siteData } from '../data/site.ts';
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
               </svg>
             </div>
-            <span class="text-gray-300">Implementação em até 30 dias</span>
+            <span class="text-gray-300">Sugestões reais para aumentar descoberta e consumo</span>
           </div>
         </div>
         
@@ -88,10 +85,10 @@ import { siteData } from '../data/site.ts';
         <div class="bg-white rounded-3xl p-8 lg:p-10 shadow-2xl">
           <div class="text-center mb-8">
             <h3 class="text-2xl lg:text-3xl font-bold text-neutral-dark mb-4">
-              Receba seu diagnóstico gratuito
+              Solicitar análise gratuita
             </h3>
             <p class="text-gray-600">
-              Preencha o formulário e receba uma análise personalizada em até 48 horas, após contato da empresa.
+              Preencha os dados abaixo para receber um diagnóstico de visibilidade do seu empreendimento no Google Maps.
             </p>
           </div>
           
@@ -140,6 +137,21 @@ import { siteData } from '../data/site.ts';
                 placeholder="(54) 99322-0552"
               >
             </div>
+
+            <!-- Company/Destination Field -->
+            <div>
+              <label for="company" class="block text-sm font-semibold text-neutral-dark mb-2">
+                Empresa/Destino *
+              </label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                required
+                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-blue focus:border-transparent transition-all duration-200 text-neutral-dark"
+                placeholder="Nome do parque, atrativo, hotel ou destino"
+              >
+            </div>
             
 
             
@@ -155,12 +167,10 @@ import { siteData } from '../data/site.ts';
                 class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-blue focus:border-transparent transition-all duration-200 text-neutral-dark"
               >
                 <option value="">Selecione aqui</option>
-                <option value="Mapa Interativo com Guia Falante">Mapa Interativo com Guia Falante</option>
-                <option value="Portal de Turismo & Destinos">Portal de Turismo & Destinos</option>
-                <option value="Sites Comerciais Inteligentes">Sites Comerciais Inteligentes</option>
-                <option value="SEO Local & Google Maps Ads">SEO Local & Google Maps Ads</option>
-                <option value="Consultoria Completa">Consultoria Completa</option>
-                <option value="Outros">Outros</option>
+                <option value="Parque ou atrativo turístico">Parque ou atrativo turístico</option>
+                <option value="Hotel ou resort">Hotel ou resort</option>
+                <option value="Destino/Poder público">Destino/Poder público</option>
+                <option value="Outro">Outro</option>
               </select>
             </div>
             
@@ -201,14 +211,14 @@ import { siteData } from '../data/site.ts';
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
               </svg>
-              <span>Enviar via WhatsApp</span>
+              <span>Solicitar demonstração no WhatsApp</span>
             </button>
             
             <!-- Alternative Contact -->
             <div class="text-center pt-4 border-t border-gray-200">
               <p class="text-sm text-gray-600 mb-3">Prefere falar diretamente?</p>
               <a 
-                href={`https://wa.me/${siteData.company.whatsapp}?text=Olá! Gostaria de solicitar um diagnóstico gratuito para meu destino.`}
+                href={`https://wa.me/${siteData.company.whatsapp}?text=Olá! Gostaria de agendar uma demonstração da TourLive para meu destino/atrativo.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="inline-flex items-center space-x-2 text-primary-blue hover:text-primary-green font-semibold transition-colors duration-200"
@@ -250,23 +260,21 @@ import { siteData } from '../data/site.ts';
       };
       
       // Validate required fields
-      if (!data.name || !data.email || !data.phone || !data.interest || !data.privacy) {
+      if (!data.name || !data.email || !data.phone || !data.company || !data.interest || !data.privacy) {
         alert('Por favor, preencha todos os campos obrigatórios.');
         return;
       }
       
-      // Format WhatsApp message with emojis (using direct concatenation)
+      // Format WhatsApp message (using direct concatenation)
       const message = 
-        `🎯 *SOLICITAÇÃO DE DIAGNÓSTICO GRATUITO*\n\n` +
-        `👤 *Nome:* ${data.name}\n` +
-        `📧 *E-mail:* ${data.email}\n` +
-        `📱 *Telefone:* ${data.phone}\n` +
-        `🏢 *Empresa/Destino:* ${data.company}\n` +
-        `💬 *Principal Interesse:* ${data.interest}\n` +
-        (data.message && data.message.trim() !== '' ? `💬 *Mensagem:*\n${data.message}\n` : '') +
-        `\n✅ Concordo com o compartilhamento dos dados para diagnóstico.\n` +
-        `\n📅 *Enviado em:* ${new Date().toLocaleString('pt-BR')}\n` +
-        `\n🚀 *Aguardo retorno em até 24h para diagnóstico gratuito!*`;
+        `*SOLICITAÇÃO DE DEMONSTRAÇÃO - TOURLIVE*\n\n` +
+        `*Nome:* ${data.name}\n` +
+        `*E-mail:* ${data.email}\n` +
+        `*Telefone:* ${data.phone}\n` +
+        `*Empresa/Destino:* ${data.company}\n` +
+        `*Perfil:* ${data.interest}\n` +
+        (data.message && data.message.trim() !== '' ? `\n*Mensagem:*\n${data.message}\n` : '') +
+        `\n*Enviado em:* ${new Date().toLocaleString('pt-BR')}\n`;
       
       // Encode message for URL (preserving emojis)
       const encodedMessage = encodeURIComponent(message);

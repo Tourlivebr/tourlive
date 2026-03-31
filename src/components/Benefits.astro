@@ -1,5 +1,14 @@
 ---
 import { siteData } from '../data/site.ts';
+
+const benefitIcons: Record<string, string> = {
+  discovery: 'M10 12a2 2 0 100-4 2 2 0 000 4z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z',
+  time: 'M10 18a8 8 0 100-16 8 8 0 000 16zm.75-8.5V5.75a.75.75 0 00-1.5 0v4.25c0 .2.08.39.22.53l2.5 2.5a.75.75 0 101.06-1.06l-2.28-2.27z',
+  revenue: 'M12 2a10 10 0 100 20 10 10 0 000-20zm.75 5.5a.75.75 0 00-1.5 0v.31c-.95.18-1.75.7-1.75 1.69 0 1.2 1 1.63 2.2 1.92 1.03.25 1.55.45 1.55 1.04 0 .55-.59.84-1.42.84-.94 0-1.54-.33-1.93-.82a.75.75 0 00-1.17.92c.54.69 1.3 1.11 2.27 1.28v.32a.75.75 0 001.5 0v-.34c1.12-.21 2-.86 2-1.98 0-1.36-1.14-1.79-2.33-2.08-.95-.23-1.42-.42-1.42-.9 0-.4.41-.68 1.18-.68.68 0 1.17.22 1.5.57a.75.75 0 001.1-1.01c-.46-.5-1.05-.82-1.78-.97V7.5z',
+  presence: 'M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z',
+  decision: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z',
+  value: 'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.722.688l4.903.713c.94.137 1.316 1.292.634 1.946l-3.576 3.486a1 1 0 00-.287.885l.844 4.882c.163.944-.833 1.667-1.679 1.219l-4.385-2.307a1 1 0 00-.933 0l-4.385 2.307c-.846.448-1.842-.275-1.679-1.219l.844-4.882a1 1 0 00-.287-.885l-3.576-3.486c-.682-.654-.306-1.809.634-1.946l4.903-.713a1 1 0 00.722-.688l1.519-4.674z',
+};
 ---
 
 <section id="beneficios" class="py-16 lg:py-24 bg-white">
@@ -7,17 +16,13 @@ import { siteData } from '../data/site.ts';
     <!-- Section Header -->
     <div class="text-center mb-16">
       <span class="inline-block px-4 py-2 bg-primary-blue/10 text-primary-blue font-semibold rounded-full text-sm mb-4">
-        Vantagens Exclusivas
+        Resultados Reais
       </span>
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-dark mb-6 leading-tight">
-        Por que escolher nossa 
-        <span class="text-primary-blue">
-          tecnologia?
-        </span>
+        O impacto direto na <span class="text-primary-blue">presença digital</span> do seu parque
       </h2>
       <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-        Transformamos a experiência do visitante com soluções inovadoras que geram resultados mensuráveis 
-        para destinos turísticos e empresas do setor.
+        Não é apenas cadastro de locais. É uma estratégia baseada no comportamento do usuário e na leitura do algoritmo do Google Maps.
       </p>
     </div>
 
@@ -29,8 +34,10 @@ import { siteData } from '../data/site.ts';
           <div class="relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 h-full">
             <!-- Icon -->
             <div class="mb-2">
-              <div class="w-16 h-16 bg-primary-blue/10 text-primary-blue rounded-2xl flex items-center justify-center text-2xl shadow-sm group-hover:scale-110 transition-transform duration-300">
-                {benefit.icon}
+              <div class="w-16 h-16 bg-primary-blue/10 text-primary-blue rounded-2xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-8 h-8" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d={benefitIcons[benefit.icon] || benefitIcons.justification} clip-rule="evenodd"></path>
+                </svg>
               </div>
             </div>
             
@@ -42,7 +49,6 @@ import { siteData } from '../data/site.ts';
               <p class="text-gray-600 leading-relaxed mb-2">
                 {benefit.description}
               </p>
-              
             </div>
             
             <!-- Hover Effect Gradient -->
@@ -55,8 +61,6 @@ import { siteData } from '../data/site.ts';
           </div>
         </div>
       ))}
-    </div>
-    </div>
     </div>
   </div>
 </section>

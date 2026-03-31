@@ -48,8 +48,8 @@ export interface Solution {
 
 export const siteData = {
   company: {
-    name: "TourLive - Turismo Interativo Ltda",
-    tagline: "Tecnologia que transforma destinos em experiências guiadas",
+    name: "TourLive - Turismo Interativo, SEO Google Maps, Mapa Interativo e Guia Falante",
+    tagline: "Turismo interativo com geolocalização e guia falante.",
     phone: "+5554993220552",
     whatsapp: "5554993220552",
     email: "tourlivebr@gmail.com",
@@ -61,26 +61,10 @@ export const siteData = {
   banners: [
     {
       id: 1,
-      title: "Tecnologia que transforma destinos em experiências guiadas",
-      subtitle: "Mapas interativos com guia falante e rotas inteligentes",
-      cta: "Solicite Orçamento",
-      image: "/images/banner-carrosssel/mapa-interativo.jpg",
-      link: "#contato"
-    },
-    {
-      id: 2,
-      title: "Seu cliente está no Google. E você, onde está?",
-      subtitle: "Sites Comerciais com link de Afiliados",
-      cta: "Como funciona",
-      image: "/images/banner-carrosssel/site-comercial.jpg",
-      link: "#contato"
-    },
-    {
-      id: 3,
-      title: "Tudo sobre o destino em um só lugar",
-      subtitle: "Portal de Destinos Turísticos",
-      cta: "Solicite",
-      image: "/images/banner-carrosssel/portal_turismo.jpg",
+      title: "Turismo Interativo com Mapa Interativo e Guia Falante",
+      subtitle: "Transforme a experiência do seu parque com geolocalização estratégica e descoberta orgânica.",
+      cta: "Receba uma análise gratuita do seu parque",
+      image: "/images/banner-carrosssel/banner1_tourlive.jpeg",
       link: "#contato"
     }
   ] as Banner[],
@@ -88,70 +72,75 @@ export const siteData = {
   benefits: [
     {
       id: 1,
-      title: "Conectando Pessoas, Negócios e Destinos",
-      description: "Unimos marketing digital e tecnologia interativa para conectar turistas, atrativos e empresas.",
-      icon: "🧭"
+      title: "Mais descoberta",
+      description: "Cada atração vira uma nova porta de entrada no Google, atraindo visitantes de forma orgânica.",
+      icon: "discovery"
     },
     {
       id: 2,
-      title: "Soluções Inteligentes para o Trade Turístico",
-      description: "Unimos automação, geolocalização e marketing para dar mais visibilidade, agências, restaurantes e atrativos turísticos.",
-      icon: "📊"
+      title: "Mais permanência",
+      description: "O visitante explora mais e aproveita melhor o local ao visualizar todas as opções disponíveis.",
+      icon: "time"
     },
     {
       id: 3,
-      title: "Tecnologia que Impulsiona Resultados",
-      description: "Interatividade e dados para transformar visitantes em clientes. Experiências que fortalecem marcas e impulsionam o turismo local.",
-      icon: "📊"
+      title: "Mais consumo",
+      description: "Fluxo direcionado para restaurantes, lojas e experiências internas que antes eram invisíveis.",
+      icon: "revenue"
+    },
+    {
+      id: 4,
+      title: "Mais presença digital",
+      description: "Seu parque deixa de ser apenas um ponto no mapa e vira um ecossistema visível e interativo.",
+      icon: "presence"
+    },
+    {
+      id: 5,
+      title: "Mais decisão de visita",
+      description: "Múltiplas atrações e conteúdos aumentam a confiança e influenciam diretamente na escolha do visitante.",
+      icon: "decision"
+    },
+    {
+      id: 6,
+      title: "Percepção de valor superior",
+      description: "Empreendimentos com mais conteúdo no Google são percebidos como mais completos e atrativos.",
+      icon: "value"
     }
   ] as Benefit[],
 
   products: [
     {
       id: 1,
-      title: "Mapa Interativo com Guia Falante",
-      description: "Mapas turísticos interativos que conectam turistas diretamente às atrações (Municípios, Resorts e Parques)",
+      title: "Análise do espaço",
+      description: "Identificação de pontos estratégicos e oportunidades de visibilidade que hoje estão invisíveis para o Google.",
       features: [
-        "Geolocalização em tempo real",
-        "Áudio-guia com informações sobre as atrações",
-        "Interface moderna com recursos multimídia integrados."
+        "Mapeamento de atrações internas",
+        "Auditoria de presença atual",
+        "Identificação de gaps de descoberta"
       ],
-      icon: "🗺️",
-      href: "https://mapainterativo.vercel.app/"
+      icon: "🔍"
     },
     {
       id: 2,
-      title: "Portais de Turismo & Destinos",
-      description: "Tudo sobre seu destino em um só lugar: atrações, eventos, mapas interativos, notícias, blog e experiências que conectam turistas, cultura e trade local.",
+      title: "Estruturação das localizações",
+      description: "Organização e posicionamento estratégico de cada atração interna no ecossistema do Google Maps.",
       features: [
-        "Centralização: tudo sobre o destino em um só lugar.",
-        "Atualização: informações e notícias em tempo real.",
-        "Conexão: aproxima turistas, cultura e negócios locais."
+        "Geolocalização precisa",
+        "Otimização de categorias e nomes",
+        "Criação de conexões entre pontos"
       ],
-      icon: "🌐"
+      icon: "📍"
     },
     {
       id: 3,
-      title: "Sites Comerciais Inteligentes",
-      description: "Sites profissionais para o turismo com domínio próprio, SEO avançado e conexão direta com o turista. Fácil de compartilhar, atrai mais clientes e gera resultados reais.",
+      title: "Publicação e otimização",
+      description: "Acompanhamento contínuo para garantir que cada ponto mantenha máxima visibilidade e desempenho.",
       features: [
-        "Presença forte online: domínio próprio com SEO que aumenta visibilidade.",
-        "Facilidade de acesso: rápido de compartilhar e encontrar nos buscadores.",
-        "Resultados reais: gera mais contatos, reservas e vendas para o negócio."
+        "Monitoramento de métricas",
+        "Atualizações constantes",
+        "Gestão de interações e fotos"
       ],
-      icon: "📱"
-    },
-    {
-      id: 4,
-      title: "SEO Local & Google Maps Ads",
-      description: "Dar destaque a cada atração do empreendimento no Google e Google Maps, ampliando visibilidade e vendas de produtos e serviços",
-      features: [
-        "Maior Visibilidade: Cada atração do parque aparecerá como resultado de pesquisa relevante no Google Maps.",
-        "Engajamento: O público poderá avaliar e comentar sobre cada atração, ampliando a interação com o parque.",
-        "Melhoria na Visualização do Mapa: Com os pins de marcação, os visitantes poderão identificar os atrativos do parque no maps."
-      ],
-      icon: "🎯",
-      href: "https://geolocalizacao-jet.vercel.app/"
+      icon: "🚀"
     }
   ] as Product[],
 
@@ -258,10 +247,10 @@ export const siteData = {
   ] as Testimonial[],
 
   stats: {
-    projectsDelivered: "10+",
-    satisfactionRate: "99%",
-    averageROI: "98%",
-    guidedInteractions: "1.2M+"
+    projectsDelivered: "Dezenas",
+    satisfactionRate: "Alta",
+    averageROI: "Foco em resultado",
+    guidedInteractions: "Milhares+"
   },
 
   navigation: [
