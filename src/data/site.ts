@@ -61,8 +61,8 @@ export const siteData = {
   banners: [
     {
       id: 1,
-      title: "Turismo Interativo com Mapa Interativo e Guia Falante",
-      subtitle: "Transforme a experiência do seu parque com geolocalização estratégica e descoberta orgânica.",
+      title: "Mapa Interativo com Guia Falante",
+      subtitle: "Transforme a experiência do seu parque com geolocalização estratégica e descobertas orgânicas.",
       cta: "Receba uma análise gratuita do seu parque",
       image: "/images/banner-carrosssel/banner1_tourlive.jpeg",
       link: "#contato"
