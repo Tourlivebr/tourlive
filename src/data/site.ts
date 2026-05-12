@@ -49,7 +49,7 @@ export interface Solution {
 export const siteData = {
   company: {
     name: "TourLive - Turismo Interativo, SEO Google Maps, Mapa Interativo e Guia Falante",
-    tagline: "Turismo interativo com geolocalização e guia falante.",
+    tagline: "Mapa Interativo e Geolocalização Google Maps.",
     phone: "+5554993220552",
     whatsapp: "5554993220552",
     email: "tourlivebr@gmail.com",
@@ -62,8 +62,8 @@ export const siteData = {
     {
       id: 1,
       title: "Mapa Interativo com Guia Falante",
-      subtitle: "Transforme a experiência do seu parque com geolocalização estratégica e descobertas orgânicas.",
-      cta: "Receba uma análise gratuita do seu parque",
+      subtitle: "Transforme a experiência no seu empreendimento com nossas soluções interativas.",
+      cta: "Receba uma análise gratuita da sua Atração",
       image: "/images/banner-carrosssel/banner1_tourlive.jpeg",
       link: "#contato"
     }
