@@ -14,6 +14,7 @@ export interface Product {
   features: string[];
   icon: string;
   href?: string;
+  isPopular?: boolean;
 }
 
 export interface Benefit {
@@ -127,36 +128,52 @@ export const siteData = {
   products: [
     {
       id: 1,
-      title: "Análise do espaço",
-      description: "Identificação de pontos estratégicos e oportunidades de visibilidade que hoje estão invisíveis para o Google.",
+      title: "Mapa Interativo com Guia Falante",
+      description: "Mapas turísticos interativos que conectam turistas diretamente às atrações de municípios, resorts e parques.",
       features: [
-        "Mapeamento de atrações internas",
-        "Auditoria de presença atual",
-        "Identificação de gaps de descoberta"
+        "Geolocalização em tempo real",
+        "Áudio-guia com informações sobre as atrações",
+        "Interface moderna com recursos multimídia integrados"
       ],
-      icon: "🔍"
+      icon: "🗺️",
+      href: "https://mapainterativo.vercel.app/",
+      isPopular: true
     },
     {
       id: 2,
-      title: "Estruturação das localizações",
-      description: "Organização e posicionamento estratégico de cada atração interna no ecossistema do Google Maps.",
+      title: "Portais de Turismo & Destinos",
+      description: "Tudo sobre seu destino em um só lugar: atrações, eventos, mapas interativos, notícias, blog e experiências que conectam turistas, cultura e trade local.",
       features: [
-        "Geolocalização precisa",
-        "Otimização de categorias e nomes",
-        "Criação de conexões entre pontos"
+        "Centralização de tudo sobre o destino",
+        "Atualização com informações e notícias em tempo real",
+        "Conexão entre turistas, cultura e negócios locais"
       ],
-      icon: "📍"
+      icon: "🌐",
+      href: "https://visitenovapetropolis.com.br/"
     },
     {
       id: 3,
-      title: "Publicação e otimização",
-      description: "Acompanhamento contínuo para garantir que cada ponto mantenha máxima visibilidade e desempenho.",
+      title: "Sites Comerciais Inteligentes",
+      description: "Sites profissionais para o turismo com domínio próprio, SEO avançado e conexão direta com o turista para gerar mais contatos, reservas e vendas.",
       features: [
-        "Monitoramento de métricas",
-        "Atualizações constantes",
-        "Gestão de interações e fotos"
+        "Presença forte online com domínio próprio",
+        "Facilidade de compartilhar e ser encontrado no Google",
+        "Estrutura pensada para gerar resultados reais"
       ],
-      icon: "🚀"
+      icon: "📱",
+      href: "/mot-app"
+    },
+    {
+      id: 4,
+      title: "SEO Local & Google Maps Ads",
+      description: "Destaque cada atração do empreendimento no Google e no Google Maps, ampliando visibilidade e vendas de produtos e serviços.",
+      features: [
+        "Maior visibilidade para cada atração no Google Maps",
+        "Engajamento com avaliações e comentários do público",
+        "Melhor leitura do mapa com pins e pontos de destaque"
+      ],
+      icon: "🎯",
+      href: "https://geolocalizacao-jet.vercel.app/"
     }
   ] as Product[],
 
